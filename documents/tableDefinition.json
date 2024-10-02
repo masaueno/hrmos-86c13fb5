@@ -1,0 +1,735 @@
+{
+  "key": "tableDefinition",
+  "value": [
+    {
+      "regulation": "PRIMARY KEY NOT NULL",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "従業員の一意識別子",
+      "id": "TAB-001",
+      "foreignKey": "",
+      "table": "employees"
+    },
+    {
+      "regulation": "UNIQUE NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(20)",
+      "column": "employee_number",
+      "description": "従業員番号",
+      "id": "TAB-002",
+      "foreignKey": "",
+      "table": "employees"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(50)",
+      "column": "last_name",
+      "description": "従業員の姓",
+      "id": "TAB-003",
+      "foreignKey": "",
+      "table": "employees"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(50)",
+      "column": "first_name",
+      "description": "従業員の名",
+      "id": "TAB-004",
+      "foreignKey": "",
+      "table": "employees"
+    },
+    {
+      "regulation": "UNIQUE NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(100)",
+      "column": "email",
+      "description": "従業員のメールアドレス",
+      "id": "TAB-005",
+      "foreignKey": "",
+      "table": "employees"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "date",
+      "column": "hire_date",
+      "description": "従業員の入社日",
+      "id": "TAB-006",
+      "foreignKey": "",
+      "table": "employees"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "department_id",
+      "description": "従業員が所属する部署のID",
+      "id": "TAB-007",
+      "foreignKey": "departments.id",
+      "table": "employees"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "position_id",
+      "description": "従業員の職位ID",
+      "id": "TAB-008",
+      "foreignKey": "positions.id",
+      "table": "employees"
+    },
+    {
+      "regulation": "",
+      "defaultValue": "NULL",
+      "dataType": "uuid",
+      "column": "manager_id",
+      "description": "従業員の上司のID",
+      "id": "TAB-009",
+      "foreignKey": "employees.id",
+      "table": "employees"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "true",
+      "dataType": "boolean",
+      "column": "is_active",
+      "description": "従業員がアクティブか否か",
+      "id": "TAB-010",
+      "foreignKey": "",
+      "table": "employees"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "レコード作成日時",
+      "id": "TAB-011",
+      "foreignKey": "",
+      "table": "employees"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "レコード更新日時",
+      "id": "TAB-012",
+      "foreignKey": "",
+      "table": "employees"
+    },
+    {
+      "regulation": "PRIMARY KEY NOT NULL",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "部署の一意識別子",
+      "id": "TAB-013",
+      "foreignKey": "",
+      "table": "departments"
+    },
+    {
+      "regulation": "UNIQUE NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(100)",
+      "column": "name",
+      "description": "部署名",
+      "id": "TAB-014",
+      "foreignKey": "",
+      "table": "departments"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "レコード作成日時",
+      "id": "TAB-015",
+      "foreignKey": "",
+      "table": "departments"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "レコード更新日時",
+      "id": "TAB-016",
+      "foreignKey": "",
+      "table": "departments"
+    },
+    {
+      "regulation": "PRIMARY KEY NOT NULL",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "職位の一意識別子",
+      "id": "TAB-017",
+      "foreignKey": "",
+      "table": "positions"
+    },
+    {
+      "regulation": "UNIQUE NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(100)",
+      "column": "name",
+      "description": "職位名",
+      "id": "TAB-018",
+      "foreignKey": "",
+      "table": "positions"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "レコード作成日時",
+      "id": "TAB-019",
+      "foreignKey": "",
+      "table": "positions"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "レコード更新日時",
+      "id": "TAB-020",
+      "foreignKey": "",
+      "table": "positions"
+    },
+    {
+      "regulation": "PRIMARY KEY NOT NULL",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "勤怠記録の一意識別子",
+      "id": "TAB-021",
+      "foreignKey": "",
+      "table": "time_records"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "employee_id",
+      "description": "勤怠を記録した従業員のID",
+      "id": "TAB-022",
+      "foreignKey": "employees.id",
+      "table": "time_records"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(20)",
+      "column": "record_type",
+      "description": "勤怠記録の種類（出勤 退勤 休憩開始 休憩終了）",
+      "id": "TAB-023",
+      "foreignKey": "",
+      "table": "time_records"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "record_time",
+      "description": "勤怠記録の日時",
+      "id": "TAB-024",
+      "foreignKey": "",
+      "table": "time_records"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "location_id",
+      "description": "勤怠記録が行われた場所のID",
+      "id": "TAB-025",
+      "foreignKey": "locations.id",
+      "table": "time_records"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(50)",
+      "column": "record_method",
+      "description": "勤怠記録の方法（ブラウザ スマホアプリ ICカード QRコードなど）",
+      "id": "TAB-026",
+      "foreignKey": "",
+      "table": "time_records"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "レコード作成日時",
+      "id": "TAB-027",
+      "foreignKey": "",
+      "table": "time_records"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "レコード更新日時",
+      "id": "TAB-028",
+      "foreignKey": "",
+      "table": "time_records"
+    },
+    {
+      "regulation": "PRIMARY KEY NOT NULL",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "勤務場所の一意識別子",
+      "id": "TAB-029",
+      "foreignKey": "",
+      "table": "locations"
+    },
+    {
+      "regulation": "UNIQUE NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(100)",
+      "column": "name",
+      "description": "勤務場所の名称",
+      "id": "TAB-030",
+      "foreignKey": "",
+      "table": "locations"
+    },
+    {
+      "regulation": "",
+      "defaultValue": "",
+      "dataType": "text",
+      "column": "address",
+      "description": "勤務場所の住所",
+      "id": "TAB-031",
+      "foreignKey": "",
+      "table": "locations"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "レコード作成日時",
+      "id": "TAB-032",
+      "foreignKey": "",
+      "table": "locations"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "レコード更新日時",
+      "id": "TAB-033",
+      "foreignKey": "",
+      "table": "locations"
+    },
+    {
+      "regulation": "PRIMARY KEY NOT NULL",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "休暇申請の一意識別子",
+      "id": "TAB-034",
+      "foreignKey": "",
+      "table": "leave_requests"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "employee_id",
+      "description": "休暇を申請した従業員のID",
+      "id": "TAB-035",
+      "foreignKey": "employees.id",
+      "table": "leave_requests"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "leave_type_id",
+      "description": "申請された休暇の種類ID",
+      "id": "TAB-036",
+      "foreignKey": "leave_types.id",
+      "table": "leave_requests"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "date",
+      "column": "start_date",
+      "description": "休暇の開始日",
+      "id": "TAB-037",
+      "foreignKey": "",
+      "table": "leave_requests"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "date",
+      "column": "end_date",
+      "description": "休暇の終了日",
+      "id": "TAB-038",
+      "foreignKey": "",
+      "table": "leave_requests"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "'pending'",
+      "dataType": "varchar(20)",
+      "column": "status",
+      "description": "申請のステータス（保留中 承認済み 却下）",
+      "id": "TAB-039",
+      "foreignKey": "",
+      "table": "leave_requests"
+    },
+    {
+      "regulation": "",
+      "defaultValue": "",
+      "dataType": "text",
+      "column": "reason",
+      "description": "休暇申請の理由",
+      "id": "TAB-040",
+      "foreignKey": "",
+      "table": "leave_requests"
+    },
+    {
+      "regulation": "",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "approver_id",
+      "description": "申請を承認または却下した従業員のID",
+      "id": "TAB-041",
+      "foreignKey": "employees.id",
+      "table": "leave_requests"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "レコード作成日時",
+      "id": "TAB-042",
+      "foreignKey": "",
+      "table": "leave_requests"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "レコード更新日時",
+      "id": "TAB-043",
+      "foreignKey": "",
+      "table": "leave_requests"
+    },
+    {
+      "regulation": "PRIMARY KEY NOT NULL",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "休暇種類の一意識別子",
+      "id": "TAB-044",
+      "foreignKey": "",
+      "table": "leave_types"
+    },
+    {
+      "regulation": "UNIQUE NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(100)",
+      "column": "name",
+      "description": "休暇種類の名称",
+      "id": "TAB-045",
+      "foreignKey": "",
+      "table": "leave_types"
+    },
+    {
+      "regulation": "",
+      "defaultValue": "",
+      "dataType": "text",
+      "column": "description",
+      "description": "休暇種類の説明",
+      "id": "TAB-046",
+      "foreignKey": "",
+      "table": "leave_types"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "レコード作成日時",
+      "id": "TAB-047",
+      "foreignKey": "",
+      "table": "leave_types"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "レコード更新日時",
+      "id": "TAB-048",
+      "foreignKey": "",
+      "table": "leave_types"
+    },
+    {
+      "regulation": "PRIMARY KEY NOT NULL",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "シフトの一意識別子",
+      "id": "TAB-049",
+      "foreignKey": "",
+      "table": "shifts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "employee_id",
+      "description": "シフトが割り当てられた従業員のID",
+      "id": "TAB-050",
+      "foreignKey": "employees.id",
+      "table": "shifts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "timestamp with time zone",
+      "column": "start_time",
+      "description": "シフトの開始時間",
+      "id": "TAB-051",
+      "foreignKey": "",
+      "table": "shifts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "timestamp with time zone",
+      "column": "end_time",
+      "description": "シフトの終了時間",
+      "id": "TAB-052",
+      "foreignKey": "",
+      "table": "shifts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "location_id",
+      "description": "シフトの勤務場所ID",
+      "id": "TAB-053",
+      "foreignKey": "locations.id",
+      "table": "shifts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "false",
+      "dataType": "boolean",
+      "column": "is_confirmed",
+      "description": "シフトが確定しているか否か",
+      "id": "TAB-054",
+      "foreignKey": "",
+      "table": "shifts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "レコード作成日時",
+      "id": "TAB-055",
+      "foreignKey": "",
+      "table": "shifts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "レコード更新日時",
+      "id": "TAB-056",
+      "foreignKey": "",
+      "table": "shifts"
+    },
+    {
+      "regulation": "PRIMARY KEY NOT NULL",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "シフト希望の一意識別子",
+      "id": "TAB-057",
+      "foreignKey": "",
+      "table": "shift_requests"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "employee_id",
+      "description": "シフト希望を出した従業員のID",
+      "id": "TAB-058",
+      "foreignKey": "employees.id",
+      "table": "shift_requests"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "timestamp with time zone",
+      "column": "preferred_start_time",
+      "description": "希望するシフトの開始時間",
+      "id": "TAB-059",
+      "foreignKey": "",
+      "table": "shift_requests"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "timestamp with time zone",
+      "column": "preferred_end_time",
+      "description": "希望するシフトの終了時間",
+      "id": "TAB-060",
+      "foreignKey": "",
+      "table": "shift_requests"
+    },
+    {
+      "regulation": "",
+      "defaultValue": "",
+      "dataType": "text",
+      "column": "reason",
+      "description": "シフト希望の理由",
+      "id": "TAB-061",
+      "foreignKey": "",
+      "table": "shift_requests"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "'pending'",
+      "dataType": "varchar(20)",
+      "column": "status",
+      "description": "シフト希望のステータス（保留中 承認済み 却下）",
+      "id": "TAB-062",
+      "foreignKey": "",
+      "table": "shift_requests"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "レコード作成日時",
+      "id": "TAB-063",
+      "foreignKey": "",
+      "table": "shift_requests"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "レコード更新日時",
+      "id": "TAB-064",
+      "foreignKey": "",
+      "table": "shift_requests"
+    },
+    {
+      "regulation": "PRIMARY KEY NOT NULL",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "残業アラートの一意識別子",
+      "id": "TAB-065",
+      "foreignKey": "",
+      "table": "overtime_alerts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "employee_id",
+      "description": "アラートが発生した従業員のID",
+      "id": "TAB-066",
+      "foreignKey": "employees.id",
+      "table": "overtime_alerts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(50)",
+      "column": "alert_type",
+      "description": "アラートの種類（日次残業 月次残業 36協定超過など）",
+      "id": "TAB-067",
+      "foreignKey": "",
+      "table": "overtime_alerts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_DATE",
+      "dataType": "date",
+      "column": "alert_date",
+      "description": "アラートが発生した日付",
+      "id": "TAB-068",
+      "foreignKey": "",
+      "table": "overtime_alerts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "numeric(5 2)",
+      "column": "overtime_hours",
+      "description": "アラート発生時の残業時間",
+      "id": "TAB-069",
+      "foreignKey": "",
+      "table": "overtime_alerts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "numeric(5 2)",
+      "column": "threshold_hours",
+      "description": "アラート発生の閾値となる時間",
+      "id": "TAB-070",
+      "foreignKey": "",
+      "table": "overtime_alerts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "false",
+      "dataType": "boolean",
+      "column": "is_resolved",
+      "description": "アラートが解決されたか否か",
+      "id": "TAB-071",
+      "foreignKey": "",
+      "table": "overtime_alerts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "レコード作成日時",
+      "id": "TAB-072",
+      "foreignKey": "",
+      "table": "overtime_alerts"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "レコード更新日時",
+      "id": "TAB-073",
+      "foreignKey": "",
+      "table": "overtime_alerts"
+    }
+  ]
+}

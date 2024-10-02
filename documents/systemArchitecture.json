@@ -1,0 +1,6 @@
+{
+  "key": "systemArchitecture",
+  "value": {
+    "mermaid": "graph TD\n    subgraph Frontend\n        B[従業員用ウェブアプリ]\n        C[管理者用ウェブアプリ]\n        D[モバイルアプリ]\n    end\n\n    subgraph Backend\n        E[認証サービス]\n        F[勤怠管理サービス]\n        G[休暇管理サービス]\n        H[シフト管理サービス]\n        I[レポート生成サービス]\n    end\n\n    subgraph Database\n        J[勤怠データDB]\n        K[従業員情報DB]\n        L[シフト情報DB]\n    end\n\n    subgraph External Services\n        M[ICカードリーダー]\n        N[指静脈認証システム]\n        O[入退室管理システム]\n        P[給与計算システム]\n    end\n\n    B --> E\n    C --> E\n    D --> E\n    E --> F\n    E --> G\n    E --> H\n    E --> I\n    F --> J\n    G --> J\n    H --> L\n    I --> J\n    I --> K\n    I --> L\n    F --> M\n    F --> N\n    F --> O\n    I --> P"
+  }
+}

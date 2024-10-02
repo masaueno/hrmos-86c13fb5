@@ -1,0 +1,33 @@
+{
+  "key": "sequenceDiagram",
+  "value": [
+    {
+      "id": "勤怠打刻",
+      "value": "{\"mermaid\":\"sequenceDiagram\\n    User->>Frontend: ログイン画面にアクセス\\n    Frontend->>Backend: 認証リクエスト送信\\n    Backend->>DB: ユーザー情報の検索\\n    DB->>Backend: ユーザー情報を返す\\n    Backend->>Frontend: JWTトークンを返す\\n    Frontend->>User: ホーム画面を表示\\n    User->>Frontend: 勤怠打刻ボタンをクリック\\n    Frontend->>Backend: 打刻情報を送信\\n    Backend->>DB: 打刻情報を保存\\n    DB->>Backend: 保存完了を通知\\n    Backend->>Frontend: 打刻成功メッセージを返す\\n    Frontend->>User: 打刻完了を表示\\n    User->>Frontend: 休暇申請フォームに入力\\n    Frontend->>Backend: 休暇申請情報を送信\\n    Backend->>DB: 休暇申請を保存\\n    DB->>Backend: 保存完了を通知\\n    Backend->>Frontend: 申請受付メッセージを返す\\n    Frontend->>User: 申請完了を表示\\n    User->>Frontend: シフト希望を入力\\n    Frontend->>Backend: シフト希望情報を送信\\n    Backend->>DB: シフト希望を保存\\n    DB->>Backend: 保存完了を通知\\n    Backend->>Frontend: 希望受付メッセージを返す\\n    Frontend->>User: 希望提出完了を表示\"}"
+    },
+    {
+      "id": "勤怠データ管理",
+      "value": "{\"mermaid\":\"sequenceDiagram\\n    User->>Frontend: ログイン情報を入力\\n    Frontend->>Backend: ログイン情報を送信\\n    Backend->>DB: ユーザー情報を検索\\n    DB->>Backend: ユーザー情報を返却\\n    Backend->>Backend: パスワードを照合\\n    Backend->>Backend: JWTトークンを生成\\n    Backend->>Frontend: JWTトークンを返却\\n    Frontend->>Frontend: トークンを保存\\n    Frontend->>User: ログイン成功を表示\\n    User->>Frontend: ホーム画面を表示\\n    Frontend->>Backend: 勤怠データを要求\\n    Backend->>DB: 勤怠データを取得\\n    DB->>Backend: 勤怠データを返却\\n    Backend->>Frontend: 勤怠データを送信\\n    Frontend->>User: 勤怠データを表示\"}"
+    },
+    {
+      "id": "休暇管理",
+      "value": "{\n\"mermaid\": \"sequenceDiagram\\n    User->>Frontend: ログイン情報入力\\n    Frontend->>Backend: 認証リクエスト送信\\n    Backend->>DB: ユーザー情報照会\\n    DB->>Backend: ユーザー情報返送\\n    Backend->>Backend: パスワード検証\\n    Backend->>Frontend: 認証結果返送\\n    Frontend->>User: ログイン結果表示\\n    alt ログイン成功\\n        User->>Frontend: ダッシュボード画面表示要求\\n        Frontend->>Backend: ユーザーデータ取得リクエスト\\n        Backend->>DB: ユーザー関連データ照会\\n        DB->>Backend: ユーザー関連データ返送\\n        Backend->>Frontend: ダッシュボードデータ送信\\n        Frontend->>User: ダッシュボード画面表示\\n    else ログイン失敗\\n        Frontend->>User: エラーメッセージ表示\\n    end\"\n}"
+    },
+    {
+      "id": "シフト管理",
+      "value": "{\"mermaid\":\"sequenceDiagram\\n    User->>Frontend: 1.ログイン画面にアクセス\\n    Frontend->>Backend: 2.認証情報を送信\\n    Backend->>DB: 3.ユーザー情報を照会\\n    DB->>Backend: 4.ユーザー情報を返信\\n    Backend->>Frontend: 5.認証結果とトークンを返信\\n    Frontend->>User: 6.ホーム画面を表示\\n    User->>Frontend: 7.勤怠打刻ボタンをクリック\\n    Frontend->>Backend: 8.打刻情報を送信\\n    Backend->>DB: 9.打刻情報を保存\\n    DB->>Backend: 10.保存結果を返信\\n    Backend->>Frontend: 11.打刻結果を返信\\n    Frontend->>User: 12.打刻完了メッセージを表示\"}"
+    },
+    {
+      "id": "残業管理",
+      "value": "{\"mermaid\":\"sequenceDiagram\\n    User->>Frontend: 残業アラート画面を開く\\n    Frontend->>Backend: 残業アラート情報を要求\\n    Backend->>DB: 残業アラートデータを取得\\n    DB->>Backend: 残業アラートデータを返す\\n    Backend->>Frontend: 残業アラート情報を送信\\n    Frontend->>User: 残業アラート画面を表示\\n    User->>Frontend: 特定のアラートの詳細を要求\\n    Frontend->>Backend: アラート詳細情報を要求\\n    Backend->>DB: アラート詳細データを取得\\n    DB->>Backend: アラート詳細データを返す\\n    Backend->>Frontend: アラート詳細情報を送信\\n    Frontend->>User: アラート詳細を表示\\n    User->>Frontend: アラートを対応済みにマーク\\n    Frontend->>Backend: アラート状態更新を要求\\n    Backend->>DB: アラート状態を更新\\n    DB->>Backend: 更新完了を通知\\n    Backend->>Frontend: 更新成功を通知\\n    Frontend->>User: アラート状態更新を表示\"}"
+    },
+    {
+      "id": "就業規則対応",
+      "value": "{\"mermaid\":\"sequenceDiagram\\n    User->>Frontend: ログイン情報を入力\\n    Frontend->>Backend: 認証リクエスト送信\\n    Backend->>DB: ユーザー情報照会\\n    DB->>Backend: ユーザー情報返却\\n    Backend->>Backend: パスワード照合\\n    Backend->>Backend: JWTトークン生成\\n    Backend->>Frontend: 認証結果とトークン返却\\n    Frontend->>User: ログイン成功または失敗を表示\\n    User->>Frontend: 勤怠打刻ボタンをクリック\\n    Frontend->>Backend: 打刻情報送信\\n    Backend->>DB: 打刻情報を記録\\n    DB->>Backend: 記録完了通知\\n    Backend->>Frontend: 打刻結果返却\\n    Frontend->>User: 打刻完了メッセージを表示\\n    User->>Frontend: 休暇申請フォームに入力\\n    Frontend->>Backend: 休暇申請情報送信\\n    Backend->>DB: 休暇申請情報を保存\\n    DB->>Backend: 保存完了通知\\n    Backend->>Frontend: 申請受付結果返却\\n    Frontend->>User: 申請完了メッセージを表示\"}"
+    },
+    {
+      "id": "システム連携",
+      "value": "{\n\"mermaid\": \"sequenceDiagram\\n    User->>Frontend: ログイン画面にアクセス\\n    Frontend->>Backend: 認証リクエスト送信\\n    Backend->>DB: ユーザー情報照会\\n    DB->>Backend: ユーザー情報返却\\n    Backend->>Frontend: 認証結果返却\\n    Frontend->>User: ログイン結果表示\\n    User->>Frontend: ホーム画面表示要求\\n    Frontend->>Backend: ユーザーデータ取得リクエスト\\n    Backend->>DB: ユーザー関連データ取得\\n    DB->>Backend: データ返却\\n    Backend->>Frontend: ユーザーデータ返却\\n    Frontend->>User: ホーム画面表示\\n    User->>Frontend: 勤怠打刻実行\\n    Frontend->>Backend: 勤怠記録リクエスト\\n    Backend->>DB: 勤怠データ保存\\n    DB->>Backend: 保存結果返却\\n    Backend->>Frontend: 打刻結果返却\\n    Frontend->>User: 打刻結果表示\"\n}"
+    }
+  ]
+}

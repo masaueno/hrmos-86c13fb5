@@ -1,0 +1,6 @@
+{
+  "key": "asisOperationFlow",
+  "value": {
+    "mermaid": "graph TD\n    subgraph 従業員\n        A[勤怠打刻] --> B[休暇申請]\n        B --> C[希望シフト申請]\n    end\n    subgraph 人事部門\n        D[勤怠データ確認] --> E[休暇管理]\n        E --> F[シフト作成]\n        F --> G[残業管理]\n    end\n    subgraph 管理職\n        H[勤怠承認] --> I[休暇承認]\n        I --> J[シフト調整]\n    end\n    subgraph システム\n        K[リアルタイム勤怠状況表示] --> L[残業アラート]\n        L --> M[レポート生成]\n    end\n    A --> D\n    B --> E\n    C --> F\n    D --> H\n    E --> I\n    F --> J\n    G --> K"
+  }
+}
